@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "incremental": true,
+        "baseUrl": "./",
+        "paths": {
+            "@src/*": ["./src/*"],
+            "@entity/*": ["./src/entity/*"],
+            "@repository/*": ["./src/repository/*"],
+            "@gateway/*": ["./src/gateway/*"],
+            "@useCase/*": ["./src/useCase/*"],
+            "@routes/*": ["./src/routes/*"],
+            "@utils/*": ["./src/utils/*"]
+        }
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules", "dist", "vitest.config.ts"]
+}
