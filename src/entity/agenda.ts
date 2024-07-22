@@ -5,17 +5,15 @@ export default class Agenda {
     horarioFim?: string;
     agendado?: boolean;
     medicoId?: number;
-    pacienteId?: number
+    agendamentoId?: number;
   
-    constructor({id, data, horarioInicio, horarioFim, agendado, medicoId, pacienteId}: 
-        {id?: number; data: Date; horarioInicio: string, horarioFim: string, agendado: boolean, medicoId?: number | undefined, pacienteId?: number | undefined}) {
+    constructor({id, data, horarioInicio, horarioFim, medicoId}: 
+        {id?: number; data: Date; horarioInicio: string, horarioFim: string, medicoId?: number | undefined}) {
         this.id = id;
         this.data = data;
         this.horarioInicio = horarioInicio;
         this.horarioFim  = horarioFim;
-        this.agendado = agendado;
         this.medicoId = medicoId;
-        this.pacienteId = pacienteId;
     }
 
     setID(id: number){
@@ -24,6 +22,10 @@ export default class Agenda {
 
     setMedicoId(medicoId: number) {
         this.medicoId = medicoId;
+    }
+    
+    setAgendamentoId(agendamentoId: number) {
+        this.agendamentoId = agendamentoId;
     }
 }
   
