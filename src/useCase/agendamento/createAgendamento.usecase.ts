@@ -38,10 +38,10 @@ export default class CreateAgendamento {
     });
     if (!medico) throw new Error("Medico não encontrado");
 
-    const [agenda] = await this.agendaRepository.get({ id: input.idMedico });
+    const [agenda] = await this.agendaRepository.get({ id: String(input.idAgenda) });
     if (!agenda) throw new Error("Agenda não encontrado");
 
-    if (!agenda.id || medico.id || usuario.id)
+    if (!agenda.id || !medico.id || !usuario.id)
       throw new Error("Erro ao criar agendamento");
     const agendamento = new Agendamento({
       agendaId: agenda.id,
