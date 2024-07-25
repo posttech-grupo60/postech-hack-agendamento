@@ -9,7 +9,7 @@ export default class ValidateUsuario {
       const { login, senha } = input;
       const service = new AwsService();
 
-      const usuario = await this.usuarioRepository.get({ login, senha });
+      const usuario = await this.usuarioRepository.login({ login, senha });
       if (usuario)
         this.token =  await service.authenticate(login, senha);
       if (!usuario) throw new Error("USUARIO_NOT_FOUND");

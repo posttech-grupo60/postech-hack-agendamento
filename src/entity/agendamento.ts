@@ -1,29 +1,32 @@
 export default class Agendamento {
-    id?: number;
-    idAgenda?: number;
-    agendado?: boolean;
-    medicoId?: number;
-    pacienteId?: number;
-    aceite?: boolean;
-  
-    constructor({id, agendado, medicoId, pacienteId}: 
-        {id?: number; agendado: boolean, medicoId?: number, pacienteId?: number}) {
-        this.id = id;
-        this.agendado = agendado;
-        this.medicoId = medicoId;
-        this.pacienteId = pacienteId;
-    }
+  id?: number;
+  agendaId?: number;
+  medicoId?: number;
+  pacienteId?: number;
+  aceito?: boolean;
+  dataAgendamento?: Date;
 
-    setID(id: number){
-        this.id = id;
-    }
+  constructor({ id, agendaId, medicoId, pacienteId, dataAgendamento}: ContructorAgendamento) {
+    this.id = id;
+    this.agendaId = agendaId;
+    this.medicoId = medicoId;
+    this.pacienteId = pacienteId;
+    this.dataAgendamento = dataAgendamento ??  new Date();
+  }
 
-    setMedicoId(medicoId: number) {
-        this.medicoId = medicoId;
-    }
-    
-    setAgendado(agendado: boolean) {
-        this.agendado = agendado;
-    }
+  setID(id: number) {
+    this.id = id;
+  }
+
+  setMedicoId(medicoId: number) {
+    this.medicoId = medicoId;
+  }
 }
-  
+
+type ContructorAgendamento = {
+  id?: number;
+  agendaId?: number;
+  medicoId?: number;
+  pacienteId?: number;
+  dataAgendamento?: Date;
+};

@@ -9,6 +9,10 @@ export interface IUsuarioModel {
   crm: string;
   senha: string;
   cognitoId: string;
+  especialidade: string;
+  latLong: string;
+  avaliacao: number;
+  valorConsulta: string;
 }
 
 const usuarioSchema = new Schema<IUsuarioModel>({
@@ -19,6 +23,10 @@ const usuarioSchema = new Schema<IUsuarioModel>({
     crm: { type: String, required: false },
     senha: { type: String, required: true },
     cognitoId: { type: String, required: false },
+    especialidade: { type: String, required: false },
+    latLong: { type: String, required: false },
+    avaliacao: { type: Number, required: false },
+    valorConsulta: { type: String, required: false },
 });
 
 export const UsuarioModel = model<IUsuarioModel>("Usuarios", usuarioSchema);
