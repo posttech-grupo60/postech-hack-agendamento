@@ -54,7 +54,6 @@ export default class MongoDbUsuarioRepository implements IUsuarioRepository {
     let usuario;
 
     usuario = await UsuarioModel.findOne({ cognitoId: cognitoId });
-    console.log("Passou aqui " + usuario);
     if (!usuario) throw new Error(`User not found!`);
 
     return UsuarioAdapter.create({

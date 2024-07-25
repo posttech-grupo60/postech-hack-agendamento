@@ -7,8 +7,9 @@ export default class AgendamentoAdapter {
     medicoId,
     pacienteId,
     dataAgendamento,
+    aceito
   }: InputCreate): Agendamento {
-    return new Agendamento({ id, agendaId, medicoId, pacienteId, dataAgendamento });
+    return new Agendamento({ id, agendaId, medicoId, pacienteId, dataAgendamento,aceito });
   }
 }
 
@@ -18,4 +19,5 @@ type InputCreate = {
   medicoId?: number;
   pacienteId?: number;
   dataAgendamento?: Date;
+  aceito?: boolean;
 };

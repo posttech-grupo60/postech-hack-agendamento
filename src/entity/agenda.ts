@@ -11,12 +11,14 @@ export default class Agenda {
     id,
     data,
     horarioInicio,
+    agendado,
     horarioFim,
     medicoId,
   }: ContructorAgenda) {
     this.id = id;
     this.data = data;
     this.horarioInicio = horarioInicio;
+    this.agendado = agendado;
     this.horarioFim = horarioFim;
     this.medicoId = medicoId;
   }
@@ -40,4 +42,5 @@ type ContructorAgenda = {
   horarioInicio: string;
   horarioFim: string;
   medicoId?: number;
+  agendado?: boolean;
 };

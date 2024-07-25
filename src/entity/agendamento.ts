@@ -6,10 +6,11 @@ export default class Agendamento {
   aceito?: boolean;
   dataAgendamento?: Date;
 
-  constructor({ id, agendaId, medicoId, pacienteId, dataAgendamento}: ContructorAgendamento) {
+  constructor({ id, agendaId, medicoId, pacienteId, aceito, dataAgendamento}: ContructorAgendamento) {
     this.id = id;
     this.agendaId = agendaId;
     this.medicoId = medicoId;
+    this.aceito = aceito;
     this.pacienteId = pacienteId;
     this.dataAgendamento = dataAgendamento ??  new Date();
   }
@@ -29,4 +30,5 @@ type ContructorAgendamento = {
   medicoId?: number;
   pacienteId?: number;
   dataAgendamento?: Date;
+  aceito?: boolean;
 };
