@@ -8,7 +8,7 @@ import {Router} from 'express';
 
 const router = Router();
 
-router.post('/criarAgenda', async (req, res) => {
+router.post('/criar-agenda', async (req, res) => {
     try {
         const token = req.headers.authorization;
         if (!token)
@@ -18,9 +18,7 @@ router.post('/criarAgenda', async (req, res) => {
             data: new Date(req.body.data),
             horarioInicio: req.body.horarioInicio,
             horarioFim: req.body.horarioFim,
-            agendado: req.body.agendado,
-            medicoId: undefined,
-            pacienteId: undefined
+            medicoId: undefined
         });
 
         const agendaRepository = new MongoDAgendaRepository();
