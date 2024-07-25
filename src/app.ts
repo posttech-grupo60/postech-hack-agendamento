@@ -3,6 +3,7 @@ import "dotenv/config";
 import express from "express";
 import usuarioRoute from "./routes/usuario";
 import agendaRoute from "./routes/agenda";
+import agendamentoRoute from "./routes/agendamento";
 import { connect } from "mongoose";
 import envs from "./utils/envs";
 
@@ -17,7 +18,7 @@ const main = async () => {
 
   app.use("/login", usuarioRoute);
   app.use("/agenda", agendaRoute);
-
+  app.use("/agendamento", agendamentoRoute);
 
   app.listen(envs.PORT, async () => {
     console.log(`Server listen on port ${envs.PORT}`);
